@@ -1,4 +1,6 @@
+import 'package:basketball_points_counter_app/cubits/counter_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'basketball_counter_screen.dart';
 
@@ -12,8 +14,11 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Busketballcounter(),
+    return BlocProvider(
+      create: (context) => CounterCubit(),
+      child: MaterialApp(
+        home: Busketballcounter(),
+      ),
     );
   }
 }
